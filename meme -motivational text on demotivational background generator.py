@@ -1,5 +1,7 @@
 # This is kind of meme - motivational text on demotivational background generator
 # It takes a moment to run API and display picture
+# This app will work only if u have your own account at api.unsplash.com and you will use access key as credentials with header.
+
 
 from tkinter import *
 from PIL import ImageTk, Image, ImageDraw, ImageFont
