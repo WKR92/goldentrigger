@@ -94,7 +94,7 @@ print_board(board)
 print("")
 
 
-# function to create random sudoku board - can determine how hard can it bo solve be by changing range 
+# function to create random sudoku board - can determine how hard can it be to solve by changing range area
 def make_holes_in_sudoku(bo):
 
     for _ in range(81):
