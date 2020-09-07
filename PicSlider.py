@@ -1,4 +1,4 @@
-# It may take a while to display first photo
+# It may take a while to display first photo 
 # Some folders where too big to display and made MemoryError
 
 from tkinter import *
