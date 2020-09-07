@@ -1,4 +1,4 @@
-#There are global variables for FastPDFReader
+#There are global variables for FastPDFReader 
 
 global create
 create = str
