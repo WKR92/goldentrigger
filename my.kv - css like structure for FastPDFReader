@@ -1,4 +1,4 @@
-# Use this file tu run FastPDFReader
+# Use this file tu run FastPDFReader 
 
 #: import get_path FastPDFreader.get_path
 #: import split FastPDFreader.split
