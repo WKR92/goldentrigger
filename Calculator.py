@@ -1,4 +1,4 @@
-# This calculator makes only one type of operation at once
+# This calculator makes only one type of operation at once 
 
 from tkinter import *
 import numpy
