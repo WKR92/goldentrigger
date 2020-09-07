@@ -1,0 +1,253 @@
+# Use this file tu run FastPDFReader
+
+#: import get_path FastPDFreader.get_path
+#: import split FastPDFreader.split
+#: import first_text_clean FastPDFreader.first_text_clean
+#: import second_text_clean FastPDFreader.second_text_clean
+#: import convert_pdf_to_txt FastPDFreader.convert_pdf_to_txt
+#: import create Global.create
+#: import raw_text Global.raw_text
+#: import split_text Global.split_text
+#: import firstCut Global.firstCut
+#: import secondCut Global.secondCut
+#: import wordx Global.wordx
+#: import n Global.n
+#: import do_the_loop FastPDFreader.do_the_loop
+#: import stop_loop FastPDFreader.stop_loop
+#: import get_first FastPDFreader.get_first
+#: import get_previous FastPDFreader.get_previous
+#: import get_next FastPDFreader.get_next
+#: import get_last FastPDFreader.get_last
+#: import tittle_of_book FastPDFreader.tittle_of_book
+#: import show_popup FastPDFreader.show_popup
+#: import cancel_event FastPDFreader.cancel_event
+#: import put_in_q FastPDFreader.put_in_q
+
+
+ScreenManager:
+    MainWindow: 
+        id: main
+        name: "Main"
+
+        GridLayout:
+            cols:1
+            text_inpt: text_inpt
+
+
+            GridLayout:
+                cols:1
+
+                Label:
+                    text_size: 600, 100
+                    text: 'Insert path to PDF file you would like to read. Without quotation marks. For example: C:/Users/Desktop/tytul.pdf |It may take a while to upload.'
+
+
+            GridLayout:
+                cols:1
+
+                TextInput:
+                    id: text_inpt
+                    multiline: False
+                    
+
+            Button:
+                text: 'Submit'
+                on_release: 
+                    app.root.current = 'Second'
+                    tittle_of_book(text_inpt, title_label)
+                    create = convert_pdf_to_txt(get_path(text_inpt, title_label), mylabel)
+
+
+    SecondWindow: 
+        id: second
+        name: 'Second'
+        on_pre_enter:
+
+        
+        GridLayout:
+            cols:1
+
+            GridLayout:
+                cols:1
+
+                Label:
+                    id: title_label
+                    text_size: 600, 100
+                    text: 
+
+            BoxLayout:
+                cols:1
+
+                Label:
+                    id: mylabel
+                    text: wordx
+                    color: 1,0,0,1
+                    font_size: 20
+
+        
+            GridLayout:
+                cols:6
+
+                Button:
+                    text: "<<"
+                    on_release: 
+                        get_first(mylabel)
+
+                Button:
+                    text: "<"
+                    on_release: 
+                        get_previous(mylabel)
+                        textSpeed = 0.200
+
+
+                Button:
+                    id: start
+                    text: "Start"
+                    on_release:
+                        raw_text.append(create)
+                        split(raw_text)
+                        first_text_clean(split_text)
+                        second_text_clean(firstCut)
+                        put_in_q(secondCut)
+                        do_the_loop(second.textSpeed, mylabel)
+
+                
+                Button:
+                    text: "Stop"
+                    on_release: 
+                        stop_loop(mylabel)
+
+                Button:
+                    text: ">"
+                    on_release: 
+                        get_next(mylabel)
+
+                
+                Button:
+                    text: ">>"
+                    on_release: 
+                        get_last(mylabel) 
+
+
+            GridLayout:
+                cols:2
+
+                Button:
+                    text: "Go Back"
+                    on_release:
+                        app.root.current = 'Main'
+                        root.transition.direction = 'right'
+
+
+                Button:
+                    text: "Set reading speed"
+                    on_release: 
+                        cancel_event()
+                        app.root.current = 'Third'
+
+    
+    ThirdWindow:
+        id: third
+        name: "Third"
+
+
+        GridLayout:
+            cols: 1
+
+
+            GridLayout:
+                cols: 1
+
+            
+                Label:
+                    text: "Choose the speed with which you want to read. The normalized speed of reading is 300 words/min."
+            
+
+            GridLayout:
+                cols: 1
+
+
+                GridLayout:
+                    cols: 3
+
+                
+                    Button:
+                        text: "200w/m"
+                        on_release: 
+                            second.textSpeed = 0.3
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                    
+                    Button:
+                        text: "300w/m"
+                        on_release:
+                            second.textSpeed = 0.2
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                    
+                    Button:
+                        text: "400w/m"
+                        on_release:
+                            second.textSpeed = 0.15
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+
+
+                GridLayout:
+                    cols: 3
+
+                    
+                    Button:
+                        text: "500w/m"
+                        on_release: 
+                            second.textSpeed = 0.12
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                    
+                    Button:
+                        text: "600w/m"
+                        on_release: 
+                            second.textSpeed = 0.1
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                    
+                    Button:
+                        text: "700w/m"
+                        on_release: 
+                            second.textSpeed = 0.085
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                
+                
+                GridLayout:
+                    cols: 3
+
+
+                    Button:
+                        text: "800w/m"
+                        on_release: 
+                            second.textSpeed = 0.075
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+                    
+                    Button:
+                        text: "900w/m"
+                        on_release: 
+                            second.textSpeed = 0.066
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
+
+
+                    
+                    Button:
+                        text: "Go back"
+                        on_release: 
+                            app.root.current = 'Second'
+                            app.root.transition.direction = 'right'
