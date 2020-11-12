@@ -214,4 +214,4 @@ class FastPDFreader(App):
 
 
 if __name__ == "__main__":
-    FastPDFreader().run()
+    FastPDFreader().run() 
