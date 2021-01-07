@@ -1,4 +1,4 @@
-# Read PDF fast by displayin words one by one 
+# Read PDF fast by displayin words one by one  
 # You have to use Global.py and my.kv form main branch to run this program
 # You can't save progress yet in this app, but i will add this feature later
 
