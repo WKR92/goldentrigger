@@ -7,3 +7,4 @@ from wtforms.validators import DataRequired
 class UploadPDFForm(FlaskForm):
     pdfFile = FileField('Upload your PDF file here: ', validators=[DataRequired(), FileAllowed(['pdf'])])
     submit = SubmitField("Submit pdf")
+    
