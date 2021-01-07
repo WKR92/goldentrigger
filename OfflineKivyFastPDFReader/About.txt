@@ -1,1 +1,1 @@
-Offline version of FastPDFReader using KIVY. In this version user can not save progress in reading yet. 
+Offline version of FastPDFReader using KIVY. In this version user can not save progress in reading yet.
