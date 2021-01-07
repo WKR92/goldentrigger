@@ -162,12 +162,6 @@ def about():
     return render_template('about.html', title='About')
 
 
-@app.route('/data', methods=['GET', 'POST', 'PUT'])
-def data():
-    text = session.get('text_from_loop', None)
-    return render_template('data.html', title='About', text=text)
-
-
 @app.route('/loadReader', methods=['GET', 'POST', 'PUT'])
 def loadReader():
     bookTittle = ""
