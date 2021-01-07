@@ -15,7 +15,7 @@ import concurrent.futures
 import atexit
 from flask_session import Session
 import redis
-
+ 
 
 
 db = SQLAlchemy()
