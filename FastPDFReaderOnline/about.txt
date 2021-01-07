@@ -1,4 +1,4 @@
 FastPDFReader is simple and totally free online recreation of 'word by word' 
 reader apps which allow users to read documents much faster by displaying them only one word at a time with chosen speed.
 It requires practice to get used to this kind of reading, but once done, can improve time of reading pretty intensively. 
-Give it a try and maybe you will start run-reading books one day.
+Give it a try and maybe you will start run-reading books one day. 
