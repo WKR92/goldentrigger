@@ -1,6 +1,5 @@
 // React without JSX
 
-
 // 1st working try
 // var result = data.splice(0, 1);
 
